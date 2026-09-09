@@ -15,7 +15,7 @@ das oft nicht der, auf den du gerade schaust. BannerHither verschiebt jedes Bann
 erscheint, auf den Bildschirm unter dem Mauszeiger, auf den Bildschirm des Fensters, in dem du gerade
 arbeitest, oder auf einen Bildschirm deiner Wahl.
 
-<!-- Demo video: paste the GitHub-hosted mp4 URL here on its own line -->
+https://github.com/user-attachments/assets/462d20c1-1100-4272-85f8-00cea43fa780
 
 ## Installation
 
@@ -95,6 +95,32 @@ können.
 - Bildschirme, die einen anderen Bildschirm spiegeln, sind keine eigenen Ziele.
 - Nicht getestet bei deaktivierter Option *Monitore verwenden verschiedene Spaces*, mit Stage Manager oder auf dem
   Sperrbildschirm.
+
+## FAQ
+
+**Warum erscheinen meine Mitteilungen auf dem falschen Monitor?**
+macOS zeigt Mitteilungsbanner nur auf dem Hauptbildschirm, also dem Display mit der Menüleiste in
+Systemeinstellungen › Displays, egal wo sich Mauszeiger oder aktives Fenster befinden. Wer an einem
+anderen Bildschirm arbeitet, bekommt jede Mitteilung auf dem falschen Bildschirm. BannerHither
+verschiebt jedes Banner auf das Display, das du gerade ansiehst.
+
+**Bekomme ich Mitteilungen auf dem zweiten Monitor oder einem externen Display?**
+Ja. Wähle *Bildschirm unter dem Mauszeiger* oder *Bildschirm des aktiven Fensters*, oder lege das
+externe Display unter *Bestimmter Bildschirm* als festes Ziel fest. Die Banner erscheinen dann auf
+dem zweiten Monitor, ohne dass sich sonst etwas an deiner Einrichtung ändert.
+
+**Warum nicht einfach die Menüleiste in Systemeinstellungen › Displays auf das andere Display ziehen?**
+Damit wird das andere Display zum Hauptbildschirm, und Dock, Standardposition neuer Fenster und der
+Haupt-Space wandern mit. Außerdem ist es eine feste Wahl, die dir beim Wechsel zwischen Bildschirmen
+nicht folgt. BannerHither lässt die Display-Anordnung unangetastet und verschiebt nur das Banner.
+
+**Verändert die App die Mitteilung selbst?**
+Nein. Es wird das gesamte NotificationCenter-Fenster verschoben, sodass Klicken, Wischen und
+Mitteilungsaktionen weiter funktionieren; der Inhalt der Mitteilungen wird nie gelesen. Die
+Mitteilungszentrale, die du über die Uhr öffnest, bleibt unberührt.
+
+**Welche macOS-Versionen werden unterstützt?**
+macOS 14 Sonoma oder neuer, geprüft unter macOS 26 Tahoe (siehe die Tabelle der getesteten Versionen oben).
 
 ## Erweiterte Einstellungen
 

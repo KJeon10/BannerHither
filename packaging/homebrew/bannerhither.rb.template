@@ -4,7 +4,7 @@ cask "bannerhither" do
 
   url "https://github.com/__GITHUB_REPO__/releases/download/v#{version}/BannerHither-#{version}.dmg"
   name "BannerHither"
-  desc "Menu bar app that moves notification banners to the display you choose"
+  desc "Menu bar app that moves notification banners to the display you are looking at"
   homepage "https://github.com/__GITHUB_REPO__"
 
   depends_on macos: :sonoma

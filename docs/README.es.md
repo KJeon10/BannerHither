@@ -14,7 +14,7 @@ notificación**. macOS siempre muestra las tiras en la pantalla principal; con v
 que estás mirando. BannerHither mueve cada tira, en el momento en que aparece, a la pantalla bajo el puntero
 del ratón, a la pantalla de la ventana en la que estás trabajando o a la pantalla que elijas.
 
-<!-- Demo video: paste the GitHub-hosted mp4 URL here on its own line -->
+https://github.com/user-attachments/assets/f69f037d-c1d9-4c08-a3e9-f85c87ac021f
 
 ## Instalación
 
@@ -93,6 +93,32 @@ ventana de NotificationCenter para que esos cambios puedan diagnosticarse a part
 - Las pantallas que duplican otra pantalla no son destinos independientes.
 - No se ha probado con la opción *Pantallas con Spaces separados* desactivada, con el Organizador visual ni en la
   pantalla de bloqueo.
+
+## Preguntas frecuentes
+
+**¿Por qué mis notificaciones aparecen en el monitor equivocado?**
+macOS muestra las tiras de notificación solo en la pantalla principal, la que tiene la barra de menús
+en Ajustes del Sistema › Pantallas, sin importar dónde estén el puntero o la ventana activa. En cuanto
+trabajas en otra pantalla, cada notificación llega a la pantalla equivocada. BannerHither mueve cada
+tira a la pantalla que realmente estás mirando.
+
+**¿Puedo recibir las notificaciones en mi segundo monitor o en una pantalla externa?**
+Sí. Elige *Pantalla bajo el puntero del ratón* o *Pantalla de la ventana activa*, o fija la pantalla
+externa como *Pantalla fija*. Las tiras aparecerán en el segundo monitor sin cambiar nada más de tu
+configuración.
+
+**¿Por qué no mover simplemente la barra de menús a la otra pantalla en Ajustes del Sistema › Pantallas?**
+Eso convierte la otra pantalla en la principal, lo que también mueve el Dock, la posición por defecto
+de las ventanas nuevas y el espacio principal; además es una elección fija que no te sigue cuando
+cambias de pantalla. BannerHither no toca la disposición de pantallas y solo mueve la tira.
+
+**¿Cambia la notificación en sí?**
+No. Se mueve la ventana completa de NotificationCenter, así que hacer clic, deslizar y las acciones de
+la notificación siguen funcionando, y el contenido nunca se lee. El panel del centro de notificaciones
+que abres desde el reloj no se toca.
+
+**¿Qué versiones de macOS son compatibles?**
+macOS 14 Sonoma o posterior, verificado en macOS 26 Tahoe (consulta la tabla de versiones probadas más arriba).
 
 ## Ajustes avanzados
 

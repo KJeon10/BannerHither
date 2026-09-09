@@ -15,7 +15,7 @@ moniteurs, ce n’est souvent pas celui que vous regardez. BannerHither déplace
 apparaît, vers l’écran situé sous le pointeur de la souris, vers l’écran de la fenêtre dans laquelle vous
 travaillez, ou vers un écran de votre choix.
 
-<!-- Demo video: paste the GitHub-hosted mp4 URL here on its own line -->
+https://github.com/user-attachments/assets/6a6004a7-ac3a-4d62-ad7c-ff5f3f2d2485
 
 ## Installation
 
@@ -96,6 +96,32 @@ puissent être diagnostiqués à partir d’un rapport de bug.
 - Les écrans qui recopient un autre écran ne sont pas des cibles distinctes.
 - Non testé avec *Les écrans disposent de Spaces distincts* désactivé, avec Stage Manager, ni sur l’écran
   verrouillé.
+
+## FAQ
+
+**Pourquoi mes notifications apparaissent-elles sur le mauvais écran ?**
+macOS n’affiche les bannières de notification que sur l’écran principal, celui qui porte la barre des
+menus dans Réglages Système › Moniteurs, quel que soit l’écran où se trouvent le pointeur ou la fenêtre
+active. Dès que vous travaillez sur un autre écran, chaque notification arrive au mauvais endroit.
+BannerHither déplace chaque bannière vers l’écran que vous regardez réellement.
+
+**Puis-je recevoir les notifications sur mon deuxième écran ou sur un écran externe ?**
+Oui. Choisissez *Écran sous le pointeur de la souris* ou *Écran de la fenêtre active*, ou désignez
+l’écran externe comme *Écran fixe*. Les bannières apparaissent alors sur le deuxième écran sans rien
+changer d’autre à votre configuration.
+
+**Pourquoi ne pas simplement déplacer la barre des menus sur l’autre écran dans Réglages Système › Moniteurs ?**
+Cela fait de l’autre écran l’écran principal, ce qui déplace aussi le Dock, la position par défaut des
+nouvelles fenêtres et l’espace principal ; et c’est un choix fixe qui ne vous suit pas quand vous
+changez d’écran. BannerHither ne touche pas à la disposition des écrans et ne déplace que la bannière.
+
+**La notification elle-même est-elle modifiée ?**
+Non. C’est toute la fenêtre de NotificationCenter qui est déplacée : clic, balayage et actions de
+notification continuent de fonctionner, et le contenu des notifications n’est jamais lu. Le panneau du
+centre de notifications ouvert depuis l’horloge n’est pas touché.
+
+**Quelles versions de macOS sont prises en charge ?**
+macOS 14 Sonoma ou plus récent, vérifié sous macOS 26 Tahoe (voir le tableau des versions testées ci-dessus).
 
 ## Réglages avancés
 

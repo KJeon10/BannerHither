@@ -15,7 +15,7 @@ that is often not the one you are looking at. BannerHither moves each banner, th
 appears, to the screen under your mouse pointer, the screen of the window you are working in,
 or one display you pick.
 
-<!-- Demo video: paste the GitHub-hosted mp4 URL here on its own line -->
+https://github.com/user-attachments/assets/ddf9e632-9b7a-4af7-b8a3-e71b7254d386
 
 ## Install
 
@@ -91,6 +91,32 @@ NotificationCenter window attributes so such changes can be diagnosed from a bug
   `resizeToTargetScreen` option below resizes the window first if that ever matters.
 - Displays that mirror another display are not separate targets.
 - Not tested with *Displays have separate Spaces* turned off, with Stage Manager, or on the lock screen.
+
+## FAQ
+
+**Why do my notifications appear on the wrong monitor?**
+macOS shows notification banners on the primary display only, the one that carries the menu bar in
+System Settings › Displays, no matter where your mouse pointer or your active window is. When you
+work on another screen, every notification lands on the wrong screen. BannerHither moves each banner
+to the display you are actually looking at.
+
+**Can I get notifications on my second monitor or external display?**
+Yes. Choose *Screen under the mouse pointer* or *Screen of the active window*, or pick the external
+display as a fixed target. Banners then show up on the second monitor without changing anything else
+about your setup.
+
+**Why not just drag the menu bar to the other display in System Settings › Displays?**
+That makes the other display the primary display, which also moves the Dock, the default position of
+new windows and the primary Space, and it is a fixed choice that does not follow you when you switch
+screens. BannerHither leaves your display arrangement alone and only moves the banner.
+
+**Does it change the notification itself?**
+No. The whole NotificationCenter window is moved, so clicking, swiping and notification actions keep
+working, and the notification contents are never read. The Notification Center panel you open from
+the clock is left untouched.
+
+**Which macOS versions are supported?**
+macOS 14 Sonoma or later, verified on macOS 26 Tahoe (see the tested versions table above).
 
 ## Advanced settings
 
