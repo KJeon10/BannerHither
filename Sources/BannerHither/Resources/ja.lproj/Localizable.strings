@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "停止中";
+"status.needsPermission" = "アクセシビリティの権限が必要です";
+"status.running.systemDefault" = "実行中 — システムのデフォルト（バナーは移動しません）";
+"status.running.followMouse" = "実行中 — マウスポインタのある画面";
+"status.running.followActiveWindow" = "実行中 — アクティブなウインドウのある画面";
+"status.running.fixedDisplay" = "実行中 — %@に固定";
+"status.running.fixedDisplayDisconnected" = "実行中 — %@は接続されていません";
+
+/* Menu items */
+"menu.start" = "開始";
+"menu.stop" = "停止";
+"menu.placementHeader" = "バナーの表示先";
+"mode.systemDefault" = "システムのデフォルト（主ディスプレイ）";
+"mode.followMouse" = "マウスポインタのある画面";
+"mode.followActiveWindow" = "アクティブなウインドウのある画面";
+"mode.fixedDisplay" = "特定のディスプレイ";
+"menu.fixedDisplay.none" = "ディスプレイが見つかりません";
+"menu.fixedDisplay.disconnected" = "%@（未接続）";
+"menu.launchAtLogin" = "ログイン時に開く";
+"menu.openAccessibilitySettings" = "アクセシビリティの設定を開く…";
+"menu.sendTestNotification" = "テスト通知を送信（3秒後）";
+"menu.copyDiagnostics" = "診断情報をコピー";
+"menu.quit" = "BannerHitherを終了";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "ログイン項目を変更できませんでした。";
+"alert.loginItemRequiresApproval" = "BannerHitherをログイン時に開くには、macOSでの承認が必要です。「ログイン項目」の設定を開いて許可してください。";
+"alert.openLoginItems" = "ログイン項目の設定を開く";
+"alert.ok" = "OK";
+"test.title" = "BannerHitherのテスト";
+"test.body" = "%@に送信しました。届く前にマウスを別の画面へ移動してください。";

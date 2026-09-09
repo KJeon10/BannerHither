@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "Stopped";
+"status.needsPermission" = "Accessibility permission required";
+"status.running.systemDefault" = "Running — system default (banners are not moved)";
+"status.running.followMouse" = "Running — screen under the mouse pointer";
+"status.running.followActiveWindow" = "Running — screen of the active window";
+"status.running.fixedDisplay" = "Running — fixed to %@";
+"status.running.fixedDisplayDisconnected" = "Running — %@ is not connected";
+
+/* Menu items */
+"menu.start" = "Start";
+"menu.stop" = "Stop";
+"menu.placementHeader" = "Show banners on";
+"mode.systemDefault" = "System default (primary display)";
+"mode.followMouse" = "Screen under the mouse pointer";
+"mode.followActiveWindow" = "Screen of the active window";
+"mode.fixedDisplay" = "Fixed display";
+"menu.fixedDisplay.none" = "No displays found";
+"menu.fixedDisplay.disconnected" = "%@ (not connected)";
+"menu.launchAtLogin" = "Launch at Login";
+"menu.openAccessibilitySettings" = "Open Accessibility Settings…";
+"menu.sendTestNotification" = "Send Test Notification (3 s delay)";
+"menu.copyDiagnostics" = "Copy Diagnostics";
+"menu.quit" = "Quit BannerHither";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "Could not change the login item.";
+"alert.loginItemRequiresApproval" = "macOS needs your approval before BannerHither can launch at login. Open Login Items settings to allow it.";
+"alert.openLoginItems" = "Open Login Items";
+"alert.ok" = "OK";
+"test.title" = "BannerHither test";
+"test.body" = "Sent at %@. Move the mouse to another screen before it arrives.";

@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "Gestoppt";
+"status.needsPermission" = "Berechtigung für Bedienungshilfen erforderlich";
+"status.running.systemDefault" = "Aktiv — Systemstandard (Banner werden nicht verschoben)";
+"status.running.followMouse" = "Aktiv — Bildschirm unter dem Mauszeiger";
+"status.running.followActiveWindow" = "Aktiv — Bildschirm des aktiven Fensters";
+"status.running.fixedDisplay" = "Aktiv — festgelegt auf %@";
+"status.running.fixedDisplayDisconnected" = "Aktiv — %@ ist nicht angeschlossen";
+
+/* Menu items */
+"menu.start" = "Starten";
+"menu.stop" = "Stoppen";
+"menu.placementHeader" = "Banner anzeigen auf";
+"mode.systemDefault" = "Systemstandard (Hauptbildschirm)";
+"mode.followMouse" = "Bildschirm unter dem Mauszeiger";
+"mode.followActiveWindow" = "Bildschirm des aktiven Fensters";
+"mode.fixedDisplay" = "Bestimmter Bildschirm";
+"menu.fixedDisplay.none" = "Keine Bildschirme gefunden";
+"menu.fixedDisplay.disconnected" = "%@ (nicht angeschlossen)";
+"menu.launchAtLogin" = "Bei der Anmeldung öffnen";
+"menu.openAccessibilitySettings" = "Einstellungen für Bedienungshilfen öffnen …";
+"menu.sendTestNotification" = "Testmitteilung senden (3 s Verzögerung)";
+"menu.copyDiagnostics" = "Diagnosedaten kopieren";
+"menu.quit" = "BannerHither beenden";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "Das Anmeldeobjekt konnte nicht geändert werden.";
+"alert.loginItemRequiresApproval" = "macOS benötigt deine Zustimmung, bevor BannerHither bei der Anmeldung geöffnet werden kann. Öffne die Einstellungen für Anmeldeobjekte, um es zu erlauben.";
+"alert.openLoginItems" = "Anmeldeobjekte öffnen";
+"alert.ok" = "OK";
+"test.title" = "BannerHither-Test";
+"test.body" = "Gesendet um %@. Bewege die Maus auf einen anderen Bildschirm, bevor die Mitteilung eintrifft.";

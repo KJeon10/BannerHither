@@ -1,0 +1,32 @@
+/* 메뉴 최상단 상태 줄 */
+"status.stopped" = "중지됨";
+"status.needsPermission" = "손쉬운 사용 권한 필요";
+"status.running.systemDefault" = "실행 중 — 기본 동작(배너를 옮기지 않음)";
+"status.running.followMouse" = "실행 중 — 마우스 포인터가 있는 화면";
+"status.running.followActiveWindow" = "실행 중 — 활성 창이 있는 화면";
+"status.running.fixedDisplay" = "실행 중 — %@에 고정";
+"status.running.fixedDisplayDisconnected" = "실행 중 — %@ 연결 안 됨";
+
+/* 메뉴 항목 */
+"menu.start" = "시작";
+"menu.stop" = "중지";
+"menu.placementHeader" = "배너 표시 위치";
+"mode.systemDefault" = "기본 동작 (주 디스플레이)";
+"mode.followMouse" = "마우스 포인터가 있는 화면";
+"mode.followActiveWindow" = "활성 창이 있는 화면";
+"mode.fixedDisplay" = "특정 디스플레이";
+"menu.fixedDisplay.none" = "디스플레이를 찾을 수 없음";
+"menu.fixedDisplay.disconnected" = "%@ (연결 안 됨)";
+"menu.launchAtLogin" = "로그인 시 실행";
+"menu.openAccessibilitySettings" = "손쉬운 사용 권한 설정 열기…";
+"menu.sendTestNotification" = "테스트 알림 보내기 (3초 후)";
+"menu.copyDiagnostics" = "진단 정보 복사";
+"menu.quit" = "BannerHither 종료";
+
+/* 경고 및 알림 */
+"alert.loginItemFailed" = "로그인 항목을 변경하지 못했습니다.";
+"alert.loginItemRequiresApproval" = "BannerHither가 로그인 시 실행되려면 macOS의 승인이 필요합니다. 로그인 항목 설정을 열어 허용해 주세요.";
+"alert.openLoginItems" = "로그인 항목 열기";
+"alert.ok" = "확인";
+"test.title" = "BannerHither 테스트";
+"test.body" = "%@에 보냄. 도착 전에 마우스를 다른 화면으로 옮겨 보세요.";

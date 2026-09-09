@@ -1,0 +1,22 @@
+# Private notes and assets that never leave this machine
+ignore/
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# App bundle assembled by scripts/build-app.sh
+build/
+dist/
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.dSYM
+*.dSYM.zip
+
+# macOS
+.DS_Store

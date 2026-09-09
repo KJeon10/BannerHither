@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "Arrêté";
+"status.needsPermission" = "Autorisation d’accessibilité requise";
+"status.running.systemDefault" = "Actif — par défaut du système (les bannières ne sont pas déplacées)";
+"status.running.followMouse" = "Actif — écran sous le pointeur de la souris";
+"status.running.followActiveWindow" = "Actif — écran de la fenêtre active";
+"status.running.fixedDisplay" = "Actif — fixé sur %@";
+"status.running.fixedDisplayDisconnected" = "Actif — %@ n’est pas connecté";
+
+/* Menu items */
+"menu.start" = "Démarrer";
+"menu.stop" = "Arrêter";
+"menu.placementHeader" = "Afficher les bannières sur";
+"mode.systemDefault" = "Par défaut du système (écran principal)";
+"mode.followMouse" = "Écran sous le pointeur de la souris";
+"mode.followActiveWindow" = "Écran de la fenêtre active";
+"mode.fixedDisplay" = "Écran fixe";
+"menu.fixedDisplay.none" = "Aucun écran trouvé";
+"menu.fixedDisplay.disconnected" = "%@ (non connecté)";
+"menu.launchAtLogin" = "Ouvrir avec la session";
+"menu.openAccessibilitySettings" = "Ouvrir les réglages « Accessibilité »…";
+"menu.sendTestNotification" = "Envoyer une notification de test (délai de 3 s)";
+"menu.copyDiagnostics" = "Copier les diagnostics";
+"menu.quit" = "Quitter BannerHither";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "Impossible de modifier le réglage « Ouvrir avec la session ».";
+"alert.loginItemRequiresApproval" = "macOS a besoin de votre accord avant que BannerHither ne puisse s’ouvrir avec la session. Ouvrez les réglages « Ouverture » pour l’autoriser.";
+"alert.openLoginItems" = "Ouvrir les réglages « Ouverture »";
+"alert.ok" = "OK";
+"test.title" = "Test BannerHither";
+"test.body" = "Envoyée à %@. Déplacez la souris vers un autre écran avant qu’elle n’arrive.";

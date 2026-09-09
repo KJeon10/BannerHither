@@ -1,0 +1,19 @@
+cask "bannerhither" do
+  version "__VERSION__"
+  sha256 "__SHA256__"
+
+  url "https://github.com/__GITHUB_REPO__/releases/download/v#{version}/BannerHither-#{version}.dmg"
+  name "BannerHither"
+  desc "Menu bar app that moves macOS notification banners to the display you choose"
+  homepage "https://github.com/__GITHUB_REPO__"
+
+  depends_on macos: ">= :sonoma"
+
+  app "BannerHither.app"
+
+  uninstall quit: "io.github.kjeon10.BannerHither"
+
+  zap trash: [
+    "~/Library/Preferences/io.github.kjeon10.BannerHither.plist",
+  ]
+end

@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "Detenido";
+"status.needsPermission" = "Se requiere el permiso de Accesibilidad";
+"status.running.systemDefault" = "Activo — por omisión del sistema (las tiras no se mueven)";
+"status.running.followMouse" = "Activo — pantalla bajo el puntero del ratón";
+"status.running.followActiveWindow" = "Activo — pantalla de la ventana activa";
+"status.running.fixedDisplay" = "Activo — fijado en %@";
+"status.running.fixedDisplayDisconnected" = "Activo — %@ no está conectada";
+
+/* Menu items */
+"menu.start" = "Iniciar";
+"menu.stop" = "Detener";
+"menu.placementHeader" = "Mostrar las tiras en";
+"mode.systemDefault" = "Por omisión del sistema (pantalla principal)";
+"mode.followMouse" = "Pantalla bajo el puntero del ratón";
+"mode.followActiveWindow" = "Pantalla de la ventana activa";
+"mode.fixedDisplay" = "Pantalla fija";
+"menu.fixedDisplay.none" = "No se han encontrado pantallas";
+"menu.fixedDisplay.disconnected" = "%@ (no conectada)";
+"menu.launchAtLogin" = "Abrir al iniciar sesión";
+"menu.openAccessibilitySettings" = "Abrir los ajustes de Accesibilidad…";
+"menu.sendTestNotification" = "Enviar notificación de prueba (3 s de retardo)";
+"menu.copyDiagnostics" = "Copiar diagnóstico";
+"menu.quit" = "Salir de BannerHither";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "No se ha podido cambiar el ítem de inicio.";
+"alert.loginItemRequiresApproval" = "macOS necesita tu aprobación para que BannerHither pueda abrirse al iniciar sesión. Abre los ajustes de Ítems de inicio para permitirlo.";
+"alert.openLoginItems" = "Abrir Ítems de inicio";
+"alert.ok" = "Aceptar";
+"test.title" = "Prueba de BannerHither";
+"test.body" = "Enviada a las %@. Mueve el ratón a otra pantalla antes de que llegue.";

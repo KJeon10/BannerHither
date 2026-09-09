@@ -1,0 +1,32 @@
+/* Status line at the top of the menu */
+"status.stopped" = "已停止";
+"status.needsPermission" = "需要辅助功能权限";
+"status.running.systemDefault" = "运行中 — 系统默认（不移动横幅）";
+"status.running.followMouse" = "运行中 — 鼠标指针所在的屏幕";
+"status.running.followActiveWindow" = "运行中 — 活跃窗口所在的屏幕";
+"status.running.fixedDisplay" = "运行中 — 固定在%@";
+"status.running.fixedDisplayDisconnected" = "运行中 — %@未连接";
+
+/* Menu items */
+"menu.start" = "开始";
+"menu.stop" = "停止";
+"menu.placementHeader" = "横幅显示位置";
+"mode.systemDefault" = "系统默认（主显示器）";
+"mode.followMouse" = "鼠标指针所在的屏幕";
+"mode.followActiveWindow" = "活跃窗口所在的屏幕";
+"mode.fixedDisplay" = "指定显示器";
+"menu.fixedDisplay.none" = "未找到显示器";
+"menu.fixedDisplay.disconnected" = "%@（未连接）";
+"menu.launchAtLogin" = "登录时打开";
+"menu.openAccessibilitySettings" = "打开“辅助功能”设置…";
+"menu.sendTestNotification" = "发送测试通知（3 秒后）";
+"menu.copyDiagnostics" = "拷贝诊断信息";
+"menu.quit" = "退出 BannerHither";
+
+/* Alerts and notifications */
+"alert.loginItemFailed" = "无法更改登录项。";
+"alert.loginItemRequiresApproval" = "macOS 需要你的批准，BannerHither 才能在登录时打开。请打开“登录项”设置并允许它。";
+"alert.openLoginItems" = "打开登录项";
+"alert.ok" = "好";
+"test.title" = "BannerHither 测试";
+"test.body" = "已于%@发送。请在通知到达前将鼠标移到另一个屏幕。";
