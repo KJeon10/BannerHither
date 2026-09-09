@@ -7,7 +7,7 @@ cask "bannerhither" do
   desc "Menu bar app that moves macOS notification banners to the display you choose"
   homepage "https://github.com/__GITHUB_REPO__"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "BannerHither.app"
 
