@@ -12,6 +12,7 @@ final class StatusBarController: NSObject, NSMenuDelegate {
     private let loginItem: LoginItemController
     private let testNotifications: TestNotificationSender
     private let diagnostics: DiagnosticsReporter
+    private let updates: UpdateCoordinator
     private lazy var menuBuilder = StatusMenuBuilder(target: self)
     private let log = AppLog.logger(category: "ui")
 
@@ -21,7 +22,8 @@ final class StatusBarController: NSObject, NSMenuDelegate {
         permission: AccessibilityPermission,
         loginItem: LoginItemController,
         testNotifications: TestNotificationSender,
-        diagnostics: DiagnosticsReporter
+        diagnostics: DiagnosticsReporter,
+        updates: UpdateCoordinator
     ) {
         self.engine = engine
         self.settings = settings
@@ -29,6 +31,7 @@ final class StatusBarController: NSObject, NSMenuDelegate {
         self.loginItem = loginItem
         self.testNotifications = testNotifications
         self.diagnostics = diagnostics
+        self.updates = updates
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         super.init()
 
@@ -44,7 +47,8 @@ final class StatusBarController: NSObject, NSMenuDelegate {
             engineState: engine.state,
             isTrusted: permission.isTrusted,
             mode: settings.placementMode,
-            fixedDisplayName: settings.fixedDisplayName
+            fixedDisplayName: settings.fixedDisplayName,
+            hasUpdateBadge: updates.availableRelease != nil
         )
         statusItem.button?.image = presentation.image
         statusItem.button?.toolTip = "\(AppInfo.name) — \(presentation.statusText)"
@@ -60,7 +64,10 @@ final class StatusBarController: NSObject, NSMenuDelegate {
             fixedDisplayName: settings.fixedDisplayName,
             screens: DisplayCatalog.screens(),
             isLaunchAtLoginEnabled: loginItem.isEnabled,
-            canToggleLaunchAtLogin: loginItem.isAvailable
+            canToggleLaunchAtLogin: loginItem.isAvailable,
+            availableUpdate: updates.availableRelease,
+            isAutomaticUpdateCheckEnabled: settings.automaticUpdateChecks,
+            isCheckingForUpdates: updates.isChecking
         )
         menuBuilder.populate(menu, with: state)
     }
@@ -101,6 +108,22 @@ final class StatusBarController: NSObject, NSMenuDelegate {
             alert.addButton(withTitle: L10n.alertOK)
             alert.runModal()
         }
+    }
+
+    @objc func toggleAutomaticUpdateChecks(_ sender: Any?) {
+        updates.setAutomaticChecks(!settings.automaticUpdateChecks)
+    }
+
+    @objc func checkForUpdates(_ sender: Any?) {
+        updates.checkNow()
+    }
+
+    @objc func showAvailableUpdate(_ sender: Any?) {
+        updates.presentAvailableRelease()
+    }
+
+    @objc func showAbout(_ sender: Any?) {
+        AboutPanel.show()
     }
 
     @objc func openAccessibilitySettings(_ sender: Any?) {

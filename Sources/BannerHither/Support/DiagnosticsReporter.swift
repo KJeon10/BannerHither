@@ -12,6 +12,7 @@ final class DiagnosticsReporter {
     private let probe: NotificationCenterProbe
     private let resolver: ScreenResolver
     private let loginItem: LoginItemController
+    private let updates: UpdateCoordinator
     private let log = AppLog.logger(category: "diagnostics")
 
     init(
@@ -20,7 +21,8 @@ final class DiagnosticsReporter {
         permission: AccessibilityPermission,
         probe: NotificationCenterProbe,
         resolver: ScreenResolver,
-        loginItem: LoginItemController
+        loginItem: LoginItemController,
+        updates: UpdateCoordinator
     ) {
         self.engine = engine
         self.settings = settings
@@ -28,6 +30,7 @@ final class DiagnosticsReporter {
         self.probe = probe
         self.resolver = resolver
         self.loginItem = loginItem
+        self.updates = updates
     }
 
     func copyToPasteboard() {
@@ -46,6 +49,7 @@ final class DiagnosticsReporter {
         lines.append("Accessibility trusted: \(permission.isTrusted)")
         lines.append("Engine: \(engine.state), mode: \(format(mode: settings.placementMode)), enabled: \(settings.isEnabled), relocations: \(engine.relocationCount), lastOrigin: \(engine.lastOrigin.map { format(point: $0) } ?? "none")")
         lines.append("Settings: pollIntervalMilliseconds=\(settings.pollIntervalMilliseconds) resizeToTargetScreen=\(settings.resizeToTargetScreen) launchAtLogin=\(loginItem.isEnabled)")
+        lines.append("Updates: automatic=\(settings.automaticUpdateChecks) consentAsked=\(settings.updateConsentAsked) lastCheck=\(settings.lastUpdateCheck.map { $0.formatted(.iso8601) } ?? "never") skipped=\(settings.skippedUpdateVersion ?? "none") available=\(updates.availableRelease?.tag ?? "none") feed=\(updates.feedURL.absoluteString)")
 
         lines.append("")
         lines.append("Screens (AppKit frame → CoreGraphics frame):")

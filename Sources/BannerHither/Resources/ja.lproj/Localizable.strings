@@ -30,3 +30,25 @@
 "alert.ok" = "OK";
 "test.title" = "BannerHitherのテスト";
 "test.body" = "%@に送信しました。届く前にマウスを別の画面へ移動してください。";
+
+/* Updates and About */
+"menu.updateAvailable" = "アップデートあり：BannerHither %@…";
+"menu.checkForUpdates" = "アップデートを確認…";
+"menu.checkingForUpdates" = "アップデートを確認中…";
+"menu.automaticUpdateChecks" = "アップデートを自動的に確認";
+"menu.about" = "BannerHitherについて";
+"update.consent.title" = "アップデートを自動的に確認しますか？";
+"update.consent.body" = "BannerHitherは1日1回、新しいバージョンが公開されているかをGitHubに問い合わせることができます。取得するのはバージョン番号だけで、あなたやMacに関する情報は送信しません。この設定はメニューからいつでも変更できます。";
+"update.consent.allow" = "自動的に確認";
+"update.consent.deny" = "確認しない";
+"update.available.title" = "BannerHither %@が利用できます";
+"update.available.body" = "現在のバージョンは%@です。GitHubから新しいバージョンをダウンロードするか、次のバージョンが出るまでこのバージョンをスキップできます。\n\nHomebrewでインストールした場合は、次のコマンドを実行してください: brew upgrade --cask bannerhither";
+"update.download" = "ダウンロード";
+"update.later" = "あとで";
+"update.skip" = "このバージョンをスキップ";
+"update.upToDate.title" = "BannerHitherは最新の状態です";
+"update.upToDate.body" = "BannerHither %@が最新バージョンです。";
+"update.failed.title" = "アップデートを確認できません";
+"update.failed.body" = "インターネット接続を確認して、もう一度お試しください。\n\n%@";
+"about.tagline" = "今見ているディスプレイに通知バナーを表示します。";
+"about.license" = "MITライセンス";

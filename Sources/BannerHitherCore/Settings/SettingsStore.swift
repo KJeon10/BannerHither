@@ -13,6 +13,11 @@ public final class SettingsStore {
         public static let isEnabled = "isEnabled"
         public static let pollIntervalMilliseconds = "pollIntervalMilliseconds"
         public static let resizeToTargetScreen = "resizeToTargetScreen"
+        public static let automaticUpdateChecks = "automaticUpdateChecks"
+        public static let updateConsentAsked = "updateConsentAsked"
+        public static let lastUpdateCheck = "lastUpdateCheck"
+        public static let skippedUpdateVersion = "skippedUpdateVersion"
+        public static let updateFeedURL = "updateFeedURL"
     }
 
     public enum Change: Sendable {
@@ -20,6 +25,7 @@ public final class SettingsStore {
         case isEnabled
         case pollInterval
         case resizeToTargetScreen
+        case automaticUpdateChecks
     }
 
     public static let defaultPollIntervalMilliseconds = 1_000
@@ -37,6 +43,7 @@ public final class SettingsStore {
             Key.isEnabled: true,
             Key.pollIntervalMilliseconds: Self.defaultPollIntervalMilliseconds,
             Key.resizeToTargetScreen: false,
+            Key.automaticUpdateChecks: false,
         ])
     }
 
@@ -103,6 +110,44 @@ public final class SettingsStore {
             defaults.set(newValue, forKey: Key.resizeToTargetScreen)
             notify(.resizeToTargetScreen)
         }
+    }
+
+    // MARK: Updates
+
+    /// Whether the app may ask GitHub for the newest release on its own. Off until the user
+    /// agrees, either in the one-time question after the first launch or through the menu.
+    public var automaticUpdateChecks: Bool {
+        get { defaults.bool(forKey: Key.automaticUpdateChecks) }
+        set {
+            defaults.set(newValue, forKey: Key.automaticUpdateChecks)
+            notify(.automaticUpdateChecks)
+        }
+    }
+
+    /// Set once the automatic-check question has been answered (or the menu toggle used), so it
+    /// is never asked again.
+    public var updateConsentAsked: Bool {
+        get { defaults.bool(forKey: Key.updateConsentAsked) }
+        set { defaults.set(newValue, forKey: Key.updateConsentAsked) }
+    }
+
+    /// When the last check completed successfully, manual or automatic.
+    public var lastUpdateCheck: Date? {
+        get { defaults.object(forKey: Key.lastUpdateCheck) as? Date }
+        set { defaults.set(newValue, forKey: Key.lastUpdateCheck) }
+    }
+
+    /// The version the user chose to skip; hidden until a newer one is published.
+    public var skippedUpdateVersion: String? {
+        get { defaults.string(forKey: Key.skippedUpdateVersion) }
+        set { defaults.set(newValue, forKey: Key.skippedUpdateVersion) }
+    }
+
+    /// Alternative release feed (same JSON shape as GitHub's `releases/latest`), e.g. a local
+    /// file for testing. Unset means the project's GitHub releases.
+    public var updateFeedURL: URL? {
+        get { defaults.string(forKey: Key.updateFeedURL).flatMap { URL(string: $0) } }
+        set { defaults.set(newValue?.absoluteString, forKey: Key.updateFeedURL) }
     }
 
     // MARK: Observation

@@ -30,3 +30,25 @@
 "alert.ok" = "확인";
 "test.title" = "BannerHither 테스트";
 "test.body" = "%@에 보냄. 도착 전에 마우스를 다른 화면으로 옮겨 보세요.";
+
+/* 업데이트 및 정보 */
+"menu.updateAvailable" = "업데이트 사용 가능: BannerHither %@…";
+"menu.checkForUpdates" = "업데이트 확인…";
+"menu.checkingForUpdates" = "업데이트 확인 중…";
+"menu.automaticUpdateChecks" = "자동으로 업데이트 확인";
+"menu.about" = "BannerHither에 관하여";
+"update.consent.title" = "업데이트를 자동으로 확인할까요?";
+"update.consent.body" = "BannerHither가 하루에 한 번 GitHub에 새 버전이 나왔는지 물어볼 수 있습니다. 버전 번호만 가져오며, 사용자나 Mac에 관한 정보는 보내지 않습니다. 메뉴에서 언제든지 바꿀 수 있습니다.";
+"update.consent.allow" = "자동으로 확인";
+"update.consent.deny" = "확인 안 함";
+"update.available.title" = "BannerHither %@ 버전이 나왔습니다";
+"update.available.body" = "현재 버전은 %@입니다. GitHub에서 새 버전을 다운로드하거나, 다음 버전이 나올 때까지 이 버전을 건너뛸 수 있습니다.\n\nHomebrew로 설치했다면 다음 명령을 실행하세요: brew upgrade --cask bannerhither";
+"update.download" = "다운로드";
+"update.later" = "나중에";
+"update.skip" = "이 버전 건너뛰기";
+"update.upToDate.title" = "BannerHither가 최신 버전입니다";
+"update.upToDate.body" = "최신 버전은 BannerHither %@입니다.";
+"update.failed.title" = "업데이트를 확인할 수 없습니다";
+"update.failed.body" = "인터넷 연결을 확인한 다음 다시 시도하세요.\n\n%@";
+"about.tagline" = "지금 보고 있는 화면에 알림 배너를 띄웁니다.";
+"about.license" = "MIT 라이선스";

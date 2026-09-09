@@ -30,3 +30,25 @@
 "alert.ok" = "OK";
 "test.title" = "Test BannerHither";
 "test.body" = "Envoyée à %@. Déplacez la souris vers un autre écran avant qu’elle n’arrive.";
+
+/* Updates and About */
+"menu.updateAvailable" = "Mise à jour disponible : BannerHither %@…";
+"menu.checkForUpdates" = "Rechercher les mises à jour…";
+"menu.checkingForUpdates" = "Recherche de mises à jour…";
+"menu.automaticUpdateChecks" = "Rechercher automatiquement les mises à jour";
+"menu.about" = "À propos de BannerHither";
+"update.consent.title" = "Rechercher automatiquement les mises à jour ?";
+"update.consent.body" = "BannerHither peut demander une fois par jour à GitHub si une nouvelle version a été publiée. Seul le numéro de version est récupéré ; aucune information sur vous ou votre Mac n’est envoyée. Vous pouvez modifier ce choix à tout moment depuis le menu.";
+"update.consent.allow" = "Rechercher automatiquement";
+"update.consent.deny" = "Ne pas rechercher";
+"update.available.title" = "BannerHither %@ est disponible";
+"update.available.body" = "Vous avez la version %@. Téléchargez la nouvelle version depuis GitHub, ou ignorez cette version jusqu’à la sortie de la suivante.\n\nInstallé avec Homebrew ? Exécutez : brew upgrade --cask bannerhither";
+"update.download" = "Télécharger";
+"update.later" = "Plus tard";
+"update.skip" = "Ignorer cette version";
+"update.upToDate.title" = "BannerHither est à jour";
+"update.upToDate.body" = "BannerHither %@ est la dernière version.";
+"update.failed.title" = "Recherche de mises à jour impossible";
+"update.failed.body" = "Vérifiez votre connexion Internet et réessayez.\n\n%@";
+"about.tagline" = "Les bannières de notification sur l’écran que vous regardez.";
+"about.license" = "Licence MIT";

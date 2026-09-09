@@ -5,9 +5,12 @@ import BannerHitherCore
 struct StatusPresentation {
     let symbolName: String
     let statusText: String
+    /// Adds a dot to the icon while a newer release is waiting in the menu.
+    let hasUpdateBadge: Bool
 
     @MainActor
-    init(engineState: Engine.State, isTrusted: Bool, mode: PlacementMode, fixedDisplayName: String?) {
+    init(engineState: Engine.State, isTrusted: Bool, mode: PlacementMode, fixedDisplayName: String?, hasUpdateBadge: Bool = false) {
+        self.hasUpdateBadge = hasUpdateBadge
         switch engineState {
         case .stopped:
             symbolName = "bell.slash"
@@ -36,7 +39,33 @@ struct StatusPresentation {
 
     /// The menu bar image; falls back to a plain bell when a symbol is unavailable on this OS.
     var image: NSImage? {
-        NSImage(systemSymbolName: symbolName, accessibilityDescription: statusText)
+        let symbol = NSImage(systemSymbolName: symbolName, accessibilityDescription: statusText)
             ?? NSImage(systemSymbolName: "bell", accessibilityDescription: statusText)
+        guard let symbol else { return nil }
+        return hasUpdateBadge ? Self.badged(symbol) : symbol
+    }
+
+    /// Draws a small dot in the lower-right corner, separated from the symbol by a cleared ring.
+    /// The result stays a template image so it follows the menu bar's appearance.
+    static func badged(_ symbol: NSImage) -> NSImage {
+        let image = NSImage(size: symbol.size, flipped: false) { rect in
+            symbol.draw(in: rect)
+            let diameter = (rect.height * 0.36).rounded()
+            let dot = CGRect(x: rect.maxX - diameter, y: rect.minY, width: diameter, height: diameter)
+            guard let context = NSGraphicsContext.current?.cgContext else { return true }
+
+            context.saveGState()
+            context.setBlendMode(.destinationOut)
+            NSColor.black.setFill()
+            NSBezierPath(ovalIn: dot.insetBy(dx: -1.25, dy: -1.25)).fill()
+            context.restoreGState()
+
+            NSColor.black.setFill()
+            NSBezierPath(ovalIn: dot).fill()
+            return true
+        }
+        image.isTemplate = true
+        image.accessibilityDescription = symbol.accessibilityDescription
+        return image
     }
 }

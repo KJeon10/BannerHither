@@ -10,6 +10,9 @@ struct StatusMenuState {
     var screens: [ScreenDescriptor]
     var isLaunchAtLoginEnabled: Bool
     var canToggleLaunchAtLogin: Bool
+    var availableUpdate: ReleaseInfo?
+    var isAutomaticUpdateCheckEnabled: Bool
+    var isCheckingForUpdates: Bool
 }
 
 /// Builds the status item menu. Actions are selectors on `StatusBarController`; the builder
@@ -28,6 +31,11 @@ struct StatusMenuBuilder {
             fixedDisplayName: state.fixedDisplayName
         )
         menu.addItem(label(presentation.statusText))
+        if let update = state.availableUpdate {
+            let item = item(L10n.menuUpdateAvailable(update.version.description), action: #selector(StatusBarController.showAvailableUpdate(_:)))
+            item.image = NSImage(systemSymbolName: "arrow.down.circle", accessibilityDescription: nil)
+            menu.addItem(item)
+        }
         menu.addItem(.separator())
 
         let toggleTitle = state.engineState == .stopped ? L10n.menuStart : L10n.menuStop
@@ -46,11 +54,22 @@ struct StatusMenuBuilder {
         loginItem.isEnabled = state.canToggleLaunchAtLogin
         menu.addItem(loginItem)
 
+        let automaticUpdates = item(L10n.menuAutomaticUpdateChecks, action: #selector(StatusBarController.toggleAutomaticUpdateChecks(_:)))
+        automaticUpdates.state = state.isAutomaticUpdateCheckEnabled ? .on : .off
+        menu.addItem(automaticUpdates)
+
         if !state.isTrusted {
             menu.addItem(item(L10n.menuOpenAccessibilitySettings, action: #selector(StatusBarController.openAccessibilitySettings(_:))))
         }
         menu.addItem(item(L10n.menuSendTestNotification, action: #selector(StatusBarController.sendTestNotification(_:))))
         menu.addItem(item(L10n.menuCopyDiagnostics, action: #selector(StatusBarController.copyDiagnostics(_:))))
+        menu.addItem(.separator())
+
+        let checkTitle = state.isCheckingForUpdates ? L10n.menuCheckingForUpdates : L10n.menuCheckForUpdates
+        let check = item(checkTitle, action: #selector(StatusBarController.checkForUpdates(_:)))
+        check.isEnabled = !state.isCheckingForUpdates
+        menu.addItem(check)
+        menu.addItem(item(L10n.menuAbout, action: #selector(StatusBarController.showAbout(_:))))
         menu.addItem(.separator())
 
         let quit = item(L10n.menuQuit, action: #selector(StatusBarController.quit(_:)))

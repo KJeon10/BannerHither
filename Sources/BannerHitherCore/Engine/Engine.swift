@@ -234,7 +234,7 @@ public final class Engine {
             restartPolling()
         case .resizeToTargetScreen:
             policy.resizeToTargetScreen = settings.resizeToTargetScreen
-        case .isEnabled:
+        case .isEnabled, .automaticUpdateChecks:
             break
         }
     }
