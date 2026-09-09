@@ -23,7 +23,7 @@ or one display you pick.
 
 1. Get `BannerHither-<version>.dmg` from the [Releases](https://github.com/KJeon10/BannerHither/releases) page.
 2. Open the image and drag `BannerHither.app` onto the Applications shortcut.
-3. Launch it from Applications. The app and the image are signed with a Developer ID and notarized, so macOS opens them without warnings.
+3. Launch it from Applications. The app and the image are signed with a Developer ID and notarized, so macOS only asks the usual first-launch confirmation.
 
 ### Homebrew
 

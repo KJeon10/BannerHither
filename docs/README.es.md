@@ -22,7 +22,7 @@ del ratón, a la pantalla de la ventana en la que estás trabajando o a la panta
 
 1. Descarga `BannerHither-<versión>.dmg` desde la página de [Releases](https://github.com/KJeon10/BannerHither/releases).
 2. Abre la imagen y arrastra `BannerHither.app` al acceso directo Applications.
-3. Ábrela desde la carpeta Aplicaciones. Tanto la app como la imagen están firmadas con un Developer ID y notarizadas, así que macOS las abre sin avisos.
+3. Ábrela desde la carpeta Aplicaciones. Tanto la app como la imagen están firmadas con un Developer ID y notarizadas, así que macOS solo pide la confirmación habitual del primer inicio.
 
 ### Homebrew
 

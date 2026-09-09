@@ -19,7 +19,7 @@ BannerHither 是一个小巧的 macOS 菜单栏 App，用来决定**通知横幅
 
 1. 从 [Releases](https://github.com/KJeon10/BannerHither/releases) 页面获取 `BannerHither-<版本>.dmg`。
 2. 打开镜像，把 `BannerHither.app` 拖到 Applications 快捷方式上。
-3. 从“应用程序”文件夹启动。App 和镜像都已用 Developer ID 签名并经过公证，macOS 会直接打开而不给出警告。
+3. 从“应用程序”文件夹启动。App 和镜像都已用 Developer ID 签名并经过公证，macOS 只会在首次启动时进行常规确认。
 
 ### Homebrew
 

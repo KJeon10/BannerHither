@@ -22,7 +22,7 @@ macOS는 배너를 항상 주 디스플레이에 띄우는데, 모니터가 여�
 
 1. [Releases](https://github.com/KJeon10/BannerHither/releases)에서 `BannerHither-<버전>.dmg`를 받습니다.
 2. 이미지를 열고 `BannerHither.app`을 Applications 바로가기로 끌어다 놓습니다.
-3. 응용 프로그램에서 실행합니다. 앱과 이미지 모두 Developer ID로 서명하고 공증했으므로 macOS 경고 없이 열립니다.
+3. 응용 프로그램에서 실행합니다. 앱과 이미지 모두 Developer ID로 서명하고 공증했으므로 macOS는 첫 실행 시 일반적인 확인만 묻습니다.
 
 ### Homebrew
 

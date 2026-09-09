@@ -23,7 +23,7 @@ arbeitest, oder auf einen Bildschirm deiner Wahl.
 
 1. Lade `BannerHither-<Version>.dmg` von der [Releases](https://github.com/KJeon10/BannerHither/releases)-Seite herunter.
 2. Öffne das Image und ziehe `BannerHither.app` auf die Verknüpfung „Applications“.
-3. Starte die App aus dem Ordner „Programme“. App und Image sind mit einer Developer ID signiert und beglaubigt, macOS öffnet sie also ohne Warnung.
+3. Starte die App aus dem Ordner „Programme“. App und Image sind mit einer Developer ID signiert und beglaubigt, macOS fragt also nur die übliche Bestätigung beim ersten Start ab.
 
 ### Homebrew
 

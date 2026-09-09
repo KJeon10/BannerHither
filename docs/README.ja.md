@@ -19,7 +19,7 @@ BannerHitherは、macOSの通知バナーを**どのディスプレイに表示�
 
 1. [Releases](https://github.com/KJeon10/BannerHither/releases)ページから`BannerHither-<バージョン>.dmg`を入手します。
 2. イメージを開き、`BannerHither.app`をApplicationsのショートカットにドラッグします。
-3. アプリケーションフォルダから起動します。アプリとイメージはどちらもDeveloper IDで署名・公証済みなので、macOSは警告なしに開きます。
+3. アプリケーションフォルダから起動します。アプリとイメージはどちらもDeveloper IDで署名・公証済みなので、macOSは初回起動時に通常の確認を求めるだけです。
 
 ### Homebrew
 

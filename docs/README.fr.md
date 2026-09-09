@@ -23,7 +23,7 @@ travaillez, ou vers un écran de votre choix.
 
 1. Récupérez `BannerHither-<version>.dmg` sur la page [Releases](https://github.com/KJeon10/BannerHither/releases).
 2. Ouvrez l’image et faites glisser `BannerHither.app` sur le raccourci Applications.
-3. Lancez l’app depuis le dossier Applications. L’app et l’image sont signées avec un Developer ID et notarisées : macOS les ouvre sans avertissement.
+3. Lancez l’app depuis le dossier Applications. L’app et l’image sont signées avec un Developer ID et notarisées : macOS ne demande que la confirmation habituelle au premier lancement.
 
 ### Homebrew
 
