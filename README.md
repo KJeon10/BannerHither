@@ -44,6 +44,9 @@ the engine starts automatically; the menu bar icon shows a bell with a badge whi
 Use *Send Test Notification* from the menu: a notification arrives three seconds later, which
 is enough time to move the mouse to another display and watch where the banner lands.
 
+Shortly after that, BannerHither asks one question, once: whether it may check for updates
+automatically. See [Updates](#updates).
+
 ## Features
 
 - **Screen under the mouse pointer** — banners follow you to whichever display you are using.
@@ -52,10 +55,20 @@ is enough time to move the mouse to another display and watch where the banner l
 - **Fixed display** — banners always go to one specific monitor. If that monitor is unplugged,
   macOS behaviour is left untouched until it returns.
 - **System default** — do nothing, keep the app parked in the menu bar.
-- Menu bar only, no Dock icon; Start/Stop toggle; Launch at Login; a test notification with a
-  3-second delay so you can move the mouse; a *Copy Diagnostics* item for bug reports.
+- Menu bar only, no Dock icon; Start/Stop toggle; Launch at Login; *Check for Updates…* and an About
+  panel; a test notification with a 3-second delay so you can move the mouse; a *Copy Diagnostics*
+  item for bug reports.
 - Universal binary (Apple silicon and Intel); interface in English, Korean, Japanese, Simplified Chinese, German, French and Spanish.
-- Needs exactly one permission: Accessibility. No network access, no data collection.
+- Needs exactly one permission: Accessibility. No data collection; the only network request is the
+  optional update check (see [Privacy](#privacy)).
+
+## Updates
+
+BannerHither does not install updates itself. *Check for Updates…* in the menu compares your version with the
+[latest release](https://github.com/KJeon10/BannerHither/releases/latest) and offers the download. With your
+consent it also checks once a day in the background; a new version then appears as a menu item and as a dot on
+the menu bar icon, without any dialog. *Skip This Version* hides a release until the next one is published.
+If you installed through Homebrew, `brew upgrade --cask bannerhither` does the same job.
 
 ## How it works
 
@@ -120,13 +133,14 @@ macOS 14 Sonoma or later, verified on macOS 26 Tahoe (see the tested versions ta
 
 ## Advanced settings
 
-Everything in the menu is stored in `UserDefaults` under `io.github.kjeon10.BannerHither`. Two
+Everything in the menu is stored in `UserDefaults` under `io.github.kjeon10.BannerHither`. Three
 options have no menu item:
 
 | Key | Default | Meaning |
 | --- | --- | --- |
 | `pollIntervalMilliseconds` | `1000` | Safety-net polling interval. Accessibility events drive the app; polling only covers missed events and NotificationCenter restarts. `0` disables polling (50–5000 accepted). |
 | `resizeToTargetScreen` | `false` | Resize the banner window to the target display before moving it. |
+| `updateFeedURL` | unset | Alternative release feed with the same JSON shape as GitHub's `releases/latest`, e.g. a local file, to test the update check. Read once at launch. |
 
 ```sh
 defaults write io.github.kjeon10.BannerHither pollIntervalMilliseconds -int 500
@@ -154,8 +168,11 @@ Allow the Accessibility permission when the app asks for it, and you are done.
 
 ## Privacy
 
-BannerHither never reads notification contents and never communicates with the outside world.
-If you prefer, you can [build it from source](#building-from-source) yourself.
+BannerHither never reads notification contents. Its only network request is the update check: with your
+consent once a day, and whenever you choose *Check for Updates…*, it fetches the latest release number from
+`api.github.com`. The request identifies the app and its version and nothing else; like any HTTPS connection
+it shows GitHub your IP address. Automatic checks stay off until you allow them and can be switched off again
+in the menu. If you prefer, you can [build it from source](#building-from-source) yourself.
 
 ## Credits
 

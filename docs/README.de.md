@@ -45,6 +45,9 @@ solange sie läuft.
 Verwende *Testmitteilung senden* im Menü: Drei Sekunden später trifft eine Mitteilung ein – genug Zeit, um die
 Maus auf einen anderen Bildschirm zu bewegen und zu sehen, wo das Banner landet.
 
+Kurz darauf stellt BannerHither einmalig eine Frage: ob es automatisch nach Updates suchen darf. Siehe
+[Updates](#updates).
+
 ## Funktionen
 
 - **Bildschirm unter dem Mauszeiger** – Banner folgen dir auf den Bildschirm, den du gerade benutzt.
@@ -53,11 +56,21 @@ Maus auf einen anderen Bildschirm zu bewegen und zu sehen, wo das Banner landet.
 - **Bestimmter Bildschirm** – Banner landen immer auf einem festgelegten Monitor. Ist dieser nicht
   angeschlossen, bleibt das macOS-Verhalten unverändert, bis er zurückkehrt.
 - **Systemstandard** – nichts tun, die App bleibt nur in der Menüleiste geparkt.
-- Nur Menüleiste, kein Dock-Symbol; Starten/Stoppen; Bei der Anmeldung öffnen; eine Testmitteilung mit
-  3 Sekunden Verzögerung, damit du die Maus bewegen kannst; *Diagnosedaten kopieren* für Fehlerberichte.
+- Nur Menüleiste, kein Dock-Symbol; Starten/Stoppen; Bei der Anmeldung öffnen; *Nach Updates suchen …* und ein
+  Über-Fenster; eine Testmitteilung mit 3 Sekunden Verzögerung, damit du die Maus bewegen kannst;
+  *Diagnosedaten kopieren* für Fehlerberichte.
 - Universal Binary (Apple Silicon und Intel); Oberfläche auf Englisch, Koreanisch, Japanisch, vereinfachtem
   Chinesisch, Deutsch, Französisch und Spanisch.
-- Benötigt genau eine Berechtigung: Bedienungshilfen. Kein Netzwerkzugriff, keine Datenerfassung.
+- Benötigt genau eine Berechtigung: Bedienungshilfen. Keine Datenerfassung; die einzige Netzwerkanfrage ist die
+  optionale Update-Suche (siehe [Datenschutz](#datenschutz)).
+
+## Updates
+
+BannerHither installiert Updates nicht selbst. *Nach Updates suchen …* im Menü vergleicht deine Version mit dem
+[neuesten Release](https://github.com/KJeon10/BannerHither/releases/latest) und bietet den Download an. Mit deiner
+Zustimmung sucht die App außerdem einmal täglich im Hintergrund; eine neue Version erscheint dann ohne Dialog als
+Menüeintrag und als Punkt auf dem Symbol in der Menüleiste. *Diese Version überspringen* blendet ein Release aus,
+bis das nächste erscheint. Wer über Homebrew installiert hat, erreicht dasselbe mit `brew upgrade --cask bannerhither`.
 
 ## Funktionsweise
 
@@ -124,13 +137,14 @@ macOS 14 Sonoma oder neuer, geprüft unter macOS 26 Tahoe (siehe die Tabelle der
 
 ## Erweiterte Einstellungen
 
-Alles im Menü wird in den `UserDefaults` unter `io.github.kjeon10.BannerHither` gespeichert. Zwei Optionen
+Alles im Menü wird in den `UserDefaults` unter `io.github.kjeon10.BannerHither` gespeichert. Drei Optionen
 haben keinen Menüeintrag:
 
 | Schlüssel | Standard | Bedeutung |
 | --- | --- | --- |
 | `pollIntervalMilliseconds` | `1000` | Abfrageintervall als Sicherheitsnetz. Accessibility-Ereignisse steuern die App; die Abfrage fängt nur verpasste Ereignisse und Neustarts von NotificationCenter ab. `0` deaktiviert die Abfrage (50–5000 zulässig). |
 | `resizeToTargetScreen` | `false` | Das Bannerfenster vor dem Verschieben auf die Größe des Zielbildschirms anpassen. |
+| `updateFeedURL` | nicht gesetzt | Alternativer Release-Feed mit derselben JSON-Struktur wie GitHubs `releases/latest`, z. B. eine lokale Datei, um die Update-Suche zu testen. Wird einmal beim Start gelesen. |
 
 ```sh
 defaults write io.github.kjeon10.BannerHither pollIntervalMilliseconds -int 500
@@ -158,8 +172,12 @@ Erteile der App die Berechtigung für Bedienungshilfen, wenn sie danach fragt �
 
 ## Datenschutz
 
-BannerHither liest keine Mitteilungsinhalte und kommuniziert nicht mit der Außenwelt. Wer möchte, kann die App
-auch [selbst aus dem Quellcode bauen](#aus-dem-quellcode-bauen).
+BannerHither liest keine Mitteilungsinhalte. Die einzige Netzwerkanfrage ist die Update-Suche: mit deiner
+Zustimmung einmal täglich sowie immer dann, wenn du *Nach Updates suchen …* wählst, ruft die App die Nummer des
+neuesten Release von `api.github.com` ab. Die Anfrage nennt nur den Namen und die Version der App; wie bei jeder
+HTTPS-Verbindung sieht GitHub deine IP-Adresse. Die automatische Suche bleibt aus, bis du sie erlaubst, und lässt
+sich im Menü jederzeit wieder abschalten. Wer möchte, kann die App auch
+[selbst aus dem Quellcode bauen](#aus-dem-quellcode-bauen).
 
 ## Danksagung
 

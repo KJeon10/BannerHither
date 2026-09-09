@@ -30,3 +30,25 @@
 "alert.ok" = "OK";
 "test.title" = "BannerHither test";
 "test.body" = "Sent at %@. Move the mouse to another screen before it arrives.";
+
+/* Updates and About */
+"menu.updateAvailable" = "Update available: BannerHither %@…";
+"menu.checkForUpdates" = "Check for Updates…";
+"menu.checkingForUpdates" = "Checking for Updates…";
+"menu.automaticUpdateChecks" = "Check for Updates Automatically";
+"menu.about" = "About BannerHither";
+"update.consent.title" = "Check for updates automatically?";
+"update.consent.body" = "Once a day, BannerHither can ask GitHub whether a newer version has been released. Only the version number is fetched; nothing about you or your Mac is sent. You can change this at any time from the menu.";
+"update.consent.allow" = "Check Automatically";
+"update.consent.deny" = "Don’t Check";
+"update.available.title" = "BannerHither %@ is available";
+"update.available.body" = "You have %@. Download the new version from GitHub, or skip this version until the next one is released.\n\nInstalled with Homebrew? Run: brew upgrade --cask bannerhither";
+"update.download" = "Download";
+"update.later" = "Later";
+"update.skip" = "Skip This Version";
+"update.upToDate.title" = "BannerHither is up to date";
+"update.upToDate.body" = "BannerHither %@ is the latest version.";
+"update.failed.title" = "Could not check for updates";
+"update.failed.body" = "Check your internet connection and try again.\n\n%@";
+"about.tagline" = "Notification banners on the display you are looking at.";
+"about.license" = "MIT License";

@@ -30,3 +30,25 @@
 "alert.ok" = "好";
 "test.title" = "BannerHither 测试";
 "test.body" = "已于%@发送。请在通知到达前将鼠标移到另一个屏幕。";
+
+/* Updates and About */
+"menu.updateAvailable" = "有更新可用：BannerHither %@…";
+"menu.checkForUpdates" = "检查更新…";
+"menu.checkingForUpdates" = "正在检查更新…";
+"menu.automaticUpdateChecks" = "自动检查更新";
+"menu.about" = "关于 BannerHither";
+"update.consent.title" = "要自动检查更新吗？";
+"update.consent.body" = "BannerHither 可以每天向 GitHub 查询一次是否发布了新版本。只获取版本号，不会发送任何关于你或你的 Mac 的信息。你随时可以在菜单中更改此设置。";
+"update.consent.allow" = "自动检查";
+"update.consent.deny" = "不检查";
+"update.available.title" = "BannerHither %@ 已发布";
+"update.available.body" = "你当前的版本是 %@。可以从 GitHub 下载新版本，或跳过此版本，直到下一个版本发布。\n\n如果是通过 Homebrew 安装的，请运行：brew upgrade --cask bannerhither";
+"update.download" = "下载";
+"update.later" = "稍后";
+"update.skip" = "跳过此版本";
+"update.upToDate.title" = "BannerHither 已是最新版本";
+"update.upToDate.body" = "BannerHither %@ 是最新版本。";
+"update.failed.title" = "无法检查更新";
+"update.failed.body" = "请检查互联网连接后重试。\n\n%@";
+"about.tagline" = "让通知横幅出现在你正在看的显示器上。";
+"about.license" = "MIT 许可证";

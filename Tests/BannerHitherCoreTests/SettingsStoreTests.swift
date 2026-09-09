@@ -24,6 +24,32 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertEqual(store.pollInterval, 1.0)
         XCTAssertFalse(store.resizeToTargetScreen)
         XCTAssertNil(store.fixedDisplayName)
+        XCTAssertFalse(store.automaticUpdateChecks)
+        XCTAssertFalse(store.updateConsentAsked)
+        XCTAssertNil(store.lastUpdateCheck)
+        XCTAssertNil(store.skippedUpdateVersion)
+        XCTAssertNil(store.updateFeedURL)
+    }
+
+    func testUpdateSettingsRoundTrip() {
+        let checked = Date(timeIntervalSince1970: 1_800_000_000)
+        store.automaticUpdateChecks = true
+        store.updateConsentAsked = true
+        store.lastUpdateCheck = checked
+        store.skippedUpdateVersion = "0.2.0"
+        store.updateFeedURL = URL(string: "file:///tmp/feed.json")
+
+        let reloaded = SettingsStore(defaults: defaults)
+        XCTAssertTrue(reloaded.automaticUpdateChecks)
+        XCTAssertTrue(reloaded.updateConsentAsked)
+        XCTAssertEqual(reloaded.lastUpdateCheck, checked)
+        XCTAssertEqual(reloaded.skippedUpdateVersion, "0.2.0")
+        XCTAssertEqual(reloaded.updateFeedURL?.absoluteString, "file:///tmp/feed.json")
+
+        reloaded.skippedUpdateVersion = nil
+        reloaded.lastUpdateCheck = nil
+        XCTAssertNil(SettingsStore(defaults: defaults).skippedUpdateVersion)
+        XCTAssertNil(SettingsStore(defaults: defaults).lastUpdateCheck)
     }
 
     func testFixedDisplayRoundTrips() {
@@ -68,7 +94,8 @@ final class SettingsStoreTests: XCTestCase {
         store.placementMode = .followActiveWindow
         store.pollIntervalMilliseconds = 500
         store.resizeToTargetScreen = true
+        store.automaticUpdateChecks = true
 
-        XCTAssertEqual(changes, [.isEnabled, .placementMode, .pollInterval, .resizeToTargetScreen])
+        XCTAssertEqual(changes, [.isEnabled, .placementMode, .pollInterval, .resizeToTargetScreen, .automaticUpdateChecks])
     }
 }

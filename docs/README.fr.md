@@ -45,6 +45,9 @@ badge tant qu’il tourne.
 Utilisez *Envoyer une notification de test* dans le menu : une notification arrive trois secondes plus tard,
 ce qui laisse le temps de déplacer la souris vers un autre écran et de voir où la bannière atterrit.
 
+Peu après, BannerHither pose une seule question, une seule fois : peut-il rechercher automatiquement les mises à
+jour ? Voir [Mises à jour](#mises-à-jour).
+
 ## Fonctionnalités
 
 - **Écran sous le pointeur de la souris** — les bannières vous suivent, quel que soit l’écran que vous utilisez.
@@ -54,11 +57,21 @@ ce qui laisse le temps de déplacer la souris vers un autre écran et de voir o�
   macOS reste inchangé jusqu’à son retour.
 - **Par défaut du système** — ne rien faire, l’app reste simplement dans la barre des menus.
 - Barre des menus uniquement, sans icône dans le Dock ; un bouton Démarrer/Arrêter ; Ouvrir avec la session ;
-  une notification de test avec 3 secondes de délai pour vous laisser déplacer la souris ; un élément
-  *Copier les diagnostics* pour les rapports de bug.
+  *Rechercher les mises à jour…* et un panneau À propos ; une notification de test avec 3 secondes de délai pour
+  vous laisser déplacer la souris ; un élément *Copier les diagnostics* pour les rapports de bug.
 - Binaire universel (puce Apple et Intel) ; interface en anglais, coréen, japonais, chinois simplifié,
   allemand, français et espagnol.
-- Une seule autorisation nécessaire : Accessibilité. Aucun accès réseau, aucune collecte de données.
+- Une seule autorisation nécessaire : Accessibilité. Aucune collecte de données ; la seule requête réseau est la
+  recherche de mises à jour, facultative (voir [Confidentialité](#confidentialité)).
+
+## Mises à jour
+
+BannerHither n’installe pas les mises à jour lui-même. *Rechercher les mises à jour…* dans le menu compare votre
+version à la [dernière version publiée](https://github.com/KJeon10/BannerHither/releases/latest) et propose le
+téléchargement. Avec votre accord, l’app vérifie aussi une fois par jour en arrière-plan ; une nouvelle version
+apparaît alors, sans aucune boîte de dialogue, sous la forme d’un élément de menu et d’un point sur l’icône de la
+barre des menus. *Ignorer cette version* masque une version jusqu’à la sortie de la suivante. Si vous avez installé
+l’app avec Homebrew, `brew upgrade --cask bannerhither` fait la même chose.
 
 ## Fonctionnement
 
@@ -126,12 +139,13 @@ macOS 14 Sonoma ou plus récent, vérifié sous macOS 26 Tahoe (voir le tableau 
 ## Réglages avancés
 
 Tout ce qui figure dans le menu est stocké dans les `UserDefaults` sous `io.github.kjeon10.BannerHither`.
-Deux options n’ont pas d’élément de menu :
+Trois options n’ont pas d’élément de menu :
 
 | Clé | Par défaut | Signification |
 | --- | --- | --- |
 | `pollIntervalMilliseconds` | `1000` | Intervalle d’interrogation de secours. Les événements Accessibility pilotent l’app ; l’interrogation ne couvre que les événements manqués et les redémarrages de NotificationCenter. `0` la désactive (valeurs acceptées : 50–5000). |
 | `resizeToTargetScreen` | `false` | Redimensionner la fenêtre de bannière à la taille de l’écran cible avant de la déplacer. |
+| `updateFeedURL` | non défini | Flux de versions alternatif, au même format JSON que `releases/latest` de GitHub, par exemple un fichier local, pour tester la recherche de mises à jour. Lu une seule fois au lancement. |
 
 ```sh
 defaults write io.github.kjeon10.BannerHither pollIntervalMilliseconds -int 500
@@ -159,8 +173,12 @@ Accordez l’autorisation Accessibilité lorsque l’app la demande, et c’est 
 
 ## Confidentialité
 
-BannerHither ne lit jamais le contenu des notifications et ne communique pas avec l’extérieur. Si vous préférez,
-vous pouvez aussi [compiler l’app vous-même depuis les sources](#compilation-depuis-les-sources).
+BannerHither ne lit jamais le contenu des notifications. Sa seule requête réseau est la recherche de mises à
+jour : avec votre accord une fois par jour, et chaque fois que vous choisissez *Rechercher les mises à jour…*,
+l’app récupère le numéro de la dernière version sur `api.github.com`. La requête n’indique que le nom et la
+version de l’app ; comme toute connexion HTTPS, elle révèle votre adresse IP à GitHub. La recherche automatique
+reste désactivée tant que vous ne l’autorisez pas et peut être désactivée à nouveau depuis le menu. Si vous
+préférez, vous pouvez aussi [compiler l’app vous-même depuis les sources](#compilation-depuis-les-sources).
 
 ## Remerciements
 

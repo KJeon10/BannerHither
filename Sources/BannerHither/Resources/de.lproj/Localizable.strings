@@ -30,3 +30,25 @@
 "alert.ok" = "OK";
 "test.title" = "BannerHither-Test";
 "test.body" = "Gesendet um %@. Bewege die Maus auf einen anderen Bildschirm, bevor die Mitteilung eintrifft.";
+
+/* Updates and About */
+"menu.updateAvailable" = "Update verfügbar: BannerHither %@ …";
+"menu.checkForUpdates" = "Nach Updates suchen …";
+"menu.checkingForUpdates" = "Suche nach Updates …";
+"menu.automaticUpdateChecks" = "Automatisch nach Updates suchen";
+"menu.about" = "Über BannerHither";
+"update.consent.title" = "Automatisch nach Updates suchen?";
+"update.consent.body" = "BannerHither kann einmal am Tag bei GitHub nachfragen, ob eine neuere Version veröffentlicht wurde. Dabei wird nur die Versionsnummer abgerufen; Informationen über dich oder deinen Mac werden nicht gesendet. Du kannst das jederzeit im Menü ändern.";
+"update.consent.allow" = "Automatisch suchen";
+"update.consent.deny" = "Nicht suchen";
+"update.available.title" = "BannerHither %@ ist verfügbar";
+"update.available.body" = "Du hast Version %@. Lade die neue Version von GitHub oder überspringe diese Version, bis die nächste erscheint.\n\nMit Homebrew installiert? Führe aus: brew upgrade --cask bannerhither";
+"update.download" = "Download";
+"update.later" = "Später";
+"update.skip" = "Diese Version überspringen";
+"update.upToDate.title" = "BannerHither ist auf dem neuesten Stand";
+"update.upToDate.body" = "BannerHither %@ ist die neueste Version.";
+"update.failed.title" = "Suche nach Updates ist fehlgeschlagen";
+"update.failed.body" = "Überprüfe deine Internetverbindung und versuche es erneut.\n\n%@";
+"about.tagline" = "Mitteilungsbanner auf dem Bildschirm, den du gerade ansiehst.";
+"about.license" = "MIT-Lizenz";

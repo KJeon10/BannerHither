@@ -11,6 +11,7 @@ final class AppContainer {
     let engine: Engine
     let loginItem: LoginItemController
     let testNotifications: TestNotificationSender
+    let updates: UpdateCoordinator
     let diagnostics: DiagnosticsReporter
     let statusBar: StatusBarController
 
@@ -22,13 +23,15 @@ final class AppContainer {
         engine = Engine(probe: probe, resolver: resolver, permission: permission, settings: settings)
         loginItem = LoginItemController()
         testNotifications = TestNotificationSender()
+        updates = UpdateCoordinator(settings: settings)
         diagnostics = DiagnosticsReporter(
             engine: engine,
             settings: settings,
             permission: permission,
             probe: probe,
             resolver: resolver,
-            loginItem: loginItem
+            loginItem: loginItem,
+            updates: updates
         )
         statusBar = StatusBarController(
             engine: engine,
@@ -36,7 +39,8 @@ final class AppContainer {
             permission: permission,
             loginItem: loginItem,
             testNotifications: testNotifications,
-            diagnostics: diagnostics
+            diagnostics: diagnostics,
+            updates: updates
         )
     }
 
@@ -46,10 +50,18 @@ final class AppContainer {
             if change == .isEnabled { self.applyEnabledState() }
             self.statusBar.refresh()
         }
-        engine.stateChangeHandler = { [weak self] _ in
+        engine.stateChangeHandler = { [weak self] state in
+            guard let self else { return }
+            self.statusBar.refresh()
+            if state == .running {
+                self.updates.engineDidStart()
+            }
+        }
+        updates.changeHandler = { [weak self] in
             self?.statusBar.refresh()
         }
         applyEnabledState()
+        updates.start()
     }
 
     func screenParametersDidChange() {
