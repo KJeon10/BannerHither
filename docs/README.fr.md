@@ -64,6 +64,23 @@ jour ? Voir [Mises à jour](#mises-à-jour).
 - Une seule autorisation nécessaire : Accessibilité. Aucune collecte de données ; la seule requête réseau est la
   recherche de mises à jour, facultative (voir [Confidentialité](#confidentialité)).
 
+## Feuille de route
+
+Sans ordre particulier. Chaque élément est développé sur sa propre branche et fusionné dans `main` quand il
+fonctionne.
+
+- **Attention** — *Écran sous le pointeur de la souris* et *Écran de la fenêtre active* ne sont que des
+  suppositions sur l’endroit où vous regardez, et toutes deux se trompent dans des situations courantes : le
+  pointeur est resté sur un écran pendant que vous tapez sur un autre, ou il est encore en route vers l’écran
+  suivant quand la bannière apparaît. Une nouvelle option de placement déterminera quel écran a réellement votre
+  attention à cet instant et y placera la bannière.
+- **Règles de placement** — Décrivez en une phrase où doivent aller les bannières, par exemple « Slack sur le
+  moniteur de gauche, Calendrier sur l’écran que je regarde, tout le reste sur l’écran le plus éloigné », ou
+  composez les mêmes règles avec un sélecteur.
+- **Badge du pointeur** — Un petit badge à côté du pointeur de la souris ou du curseur de texte signale l’arrivée
+  d’une notification et permet de l’ouvrir sur place, sans gêner ce que vous faites. La manière de le rendre
+  utile sans jamais distraire reste à définir.
+
 ## Mises à jour
 
 BannerHither n’installe pas les mises à jour lui-même. *Rechercher les mises à jour…* dans le menu compare votre

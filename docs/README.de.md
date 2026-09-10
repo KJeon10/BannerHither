@@ -64,6 +64,23 @@ Kurz darauf stellt BannerHither einmalig eine Frage: ob es automatisch nach Upda
 - Benötigt genau eine Berechtigung: Bedienungshilfen. Keine Datenerfassung; die einzige Netzwerkanfrage ist die
   optionale Update-Suche (siehe [Datenschutz](#datenschutz)).
 
+## Roadmap
+
+Ohne feste Reihenfolge. Jeder Punkt wird auf einem eigenen Branch entwickelt und in `main` gemergt, sobald er
+funktioniert.
+
+- **Aufmerksamkeit** – *Bildschirm unter dem Mauszeiger* und *Bildschirm des aktiven Fensters* sind beide nur
+  Vermutungen darüber, wohin du gerade schaust, und beide liegen im Alltag oft daneben: Der Zeiger steht auf
+  einem Bildschirm, während du auf einem anderen tippst, oder er ist noch auf dem Weg zum nächsten Bildschirm,
+  wenn das Banner erscheint. Eine neue Platzierungsoption soll erkennen, welcher Bildschirm in diesem Moment
+  tatsächlich deine Aufmerksamkeit hat, und das Banner dort zeigen.
+- **Platzierungsregeln** – Beschreibe in einem Satz, wohin Banner sollen, z. B. „Slack auf den linken Monitor,
+  Kalender auf den Bildschirm, den ich gerade ansehe, alles andere auf den am weitesten entfernten Bildschirm“,
+  oder stelle dieselben Regeln mit einer Auswahl zusammen.
+- **Zeiger-Badge** – Ein kleines Badge neben dem Mauszeiger oder der Texteinfügemarke zeigt, dass eine Mitteilung
+  eingetroffen ist, und lässt sie von dort aus öffnen, ohne dich bei der Arbeit zu stören. Wie das nützlich wird,
+  ohne je abzulenken, ist noch offen.
+
 ## Updates
 
 BannerHither installiert Updates nicht selbst. *Nach Updates suchen …* im Menü vergleicht deine Version mit dem

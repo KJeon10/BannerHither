@@ -62,6 +62,22 @@ automatically. See [Updates](#updates).
 - Needs exactly one permission: Accessibility. No data collection; the only network request is the
   optional update check (see [Privacy](#privacy)).
 
+## Roadmap
+
+In no particular order. Each item is developed on its own branch and merged into `main` when it works.
+
+- **Attention display** — *Screen under the mouse pointer* and *Screen of the active window* are
+  both guesses about where you are looking, and both miss everyday situations: the pointer is
+  parked on one display while you type on another, or it is still on its way to the next screen
+  when the banner arrives. A new placement option will work out which display actually has your
+  attention at that moment and put the banner there.
+- **Placement rules** — Describe where banners should go in one sentence, e.g. "Slack on the left
+  monitor, Calendar on the screen I'm looking at, everything else on the display farthest away",
+  or build the same rules with a picker.
+- **Pointer badge** — A small badge next to the mouse pointer or the text cursor that shows a
+  notification has arrived and lets you open it from there, without getting in the way of what
+  you are doing. How to make it useful without ever being a distraction is still being worked out.
+
 ## Updates
 
 BannerHither does not install updates itself. *Check for Updates…* in the menu compares your version with the

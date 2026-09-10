@@ -63,6 +63,21 @@ Consulta [Actualizaciones](#actualizaciones).
 - Necesita exactamente un permiso: Accesibilidad. Sin recopilación de datos; la única petición de red es la
   búsqueda opcional de actualizaciones (consulta [Privacidad](#privacidad)).
 
+## Hoja de ruta
+
+Sin orden concreto. Cada punto se desarrolla en su propia rama y se fusiona en `main` cuando funciona.
+
+- **Atención** — *Pantalla bajo el puntero del ratón* y *Pantalla de la ventana activa* son solo suposiciones
+  sobre dónde estás mirando, y ambas fallan en situaciones cotidianas: el puntero se queda en una pantalla
+  mientras escribes en otra, o todavía va de camino a la siguiente pantalla cuando aparece la tira. Una nueva
+  opción de colocación averiguará qué pantalla tiene realmente tu atención en ese momento y pondrá la tira allí.
+- **Reglas de colocación** — Describe en una frase adónde deben ir las tiras, por ejemplo «Slack en el monitor
+  izquierdo, Calendario en la pantalla que estoy mirando, todo lo demás en la pantalla más lejana», o monta las
+  mismas reglas con un selector.
+- **Insignia junto al puntero** — Una pequeña insignia junto al puntero del ratón o al cursor de texto avisa de
+  que ha llegado una notificación y permite abrirla desde ahí, sin estorbar lo que estás haciendo. Cómo hacerla
+  útil sin distraer nunca está aún por decidir.
+
 ## Actualizaciones
 
 BannerHither no instala las actualizaciones por sí misma. *Buscar actualizaciones…* en el menú compara tu versión
